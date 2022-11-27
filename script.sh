@@ -145,11 +145,13 @@ sudo systemctl enable docker
 
 fi 
 
+sudo kill `sudo lsof -t -i:3306`
+
 sudo docker pull mysql
 
 cowsay -f tux "Buildando DockerFile MySQL"
 
-sudo docker build -t mysql-safespace -f DockerfileBD .
+sudo docker build -t mysql-safespace -f ./java-para-aws/DockerfileBD .
 
 sleep 4
 
@@ -159,7 +161,7 @@ clear
 
 cowsay -f tux "Buildando Dockerfile Java"
 
-sudo docker build -t java-docker -f DockerfileJAVA . 
+sudo docker build -t java-docker -f ./java-para-aws/DockerfileJAVA . 
 
 sleep 4 
 
@@ -168,8 +170,6 @@ clear
         cowsay -f tux "Subindo Container Mysql"
 
         sudo docker run -dit --restart unless-stopped -p 3306:3306 --name safespace mysql-safespace
-
-
 
 clear 
 
