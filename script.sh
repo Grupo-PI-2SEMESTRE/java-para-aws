@@ -177,7 +177,7 @@ clear
 
         cowsay -f tux "Subindo Container Java"
 
-        sudo docker run -dit -p 8080:8080 --name safespaceJava java-docker
+        sudo docker run -dit --restart unless-stopped -p 8080:8080 --name safespaceJava java-docker
 
         echo "Docker Configurado"
 
