@@ -1,5 +1,5 @@
 FROM adoptopenjdk/openjdk11:latest 
 
-COPY ./commandline.jar /commandline.jar
+COPY ./java-para-aws/commandline.jar /commandline.jar
 
 CMD  ["java", "-jar", "commandline.jar"]
