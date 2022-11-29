@@ -32,8 +32,6 @@ clear
 
                 clear
 
-
-
                java --version
 
 
@@ -179,6 +177,28 @@ clear
 
         sudo docker run -dit --restart unless-stopped -p 8080:8080 --name safespaceJava java-docker
 
-        echo "Docker Configurado"
+clear 
+        cowsay -f tux "Docker Configurado"
 
-        
+sleep 2
+clear 
+cowsay -f tux "Criando aliases"
+
+echo "alias acessarbanco='sudo docker exec -it safespace mysql -u root -purubu100'" >> $HOME/.bash_aliases
+echo "alias entrarsistema='java -jar /home/ubuntu/Desktop/java-para-aws/visual.jar'" >> $HOME/.bash_aliases
+echo "alias cli='sudo docker exec -it safespaceJava java -jar commandline.jar'" >> $HOME/.bash_aliases
+
+source .bash_aliases
+
+clear
+
+cowsay -f tux "Atalhos Criados"
+sleep 1
+clear
+cowsay -f tux "Para entrar no sistema visual, digite no console 'entrarsistema'"
+sleep 2
+clear 
+cowsay -f tux "Para entrar no sistema em linha de comando, digite 'cli'"
+sleep 2
+clear 
+cowsay -f tux "Para para acessar o banco, digite no console 'acessarbanco'"
